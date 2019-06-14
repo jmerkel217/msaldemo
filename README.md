@@ -2,6 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
+## Get Started
+Use the following instructions to clone and experiment with this project
+
+1. Begin by cloning the git repository to your development machine 
+    git clone https://github.com/dmcwee/msaldemo.git
+2. Run `npm update` in the folder where the repository was cloned
+3. Register your application with Azure AD using [these instructions](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-javascript-spa#register-your-application)
+4. Grant this application `user.read` and `user.read.all` permissions
+4. Update the `Msaldemocfg.ts` file to include your clientID and Tenant Name with your application registration information
+    export const MSALDemoCfg = {
+      clientID:'[YOUR CLIENT ID HERE]', <- This comes from your Azure AD Application registration settings
+      authority: "https://login.microsoftonline.com/[YOUR TENANT NAME HERE]"  <- this can by your *.onmicrosoft.com tenant name
+    } 
+5. Run `ng serve` to begin your application and browse to http://localhost:4200/ 
+
+### Known Issue
+1. After login the AAD List Link and Welcome {username} values do not show so the user must refresh the browser
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -19,6 +37,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
+E2E is not currently enabled in this project.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
