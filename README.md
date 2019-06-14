@@ -9,15 +9,20 @@ Use the following instructions to clone and experiment with this project
 
 1. Begin by cloning the git repository to your development machine 
     git clone https://github.com/dmcwee/msaldemo.git
-2. Run `npm update` in the folder where the repository was cloned
-3. Register your application with Azure AD using [these instructions](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-javascript-spa#register-your-application)
-4. Grant this application `user.read` and `user.read.all` permissions
-4. Update the `Msaldemocfg.ts` file to include your clientID and Tenant Name with your application registration information
-    export const MSALDemoCfg = {
-      clientID:'[YOUR CLIENT ID HERE]', <- This comes from your Azure AD Application registration settings
-      authority: "https://login.microsoftonline.com/[YOUR TENANT NAME HERE]"  <- this can by your *.onmicrosoft.com tenant name
-    } 
-5. Run `ng serve` to begin your application and browse to http://localhost:4200/ 
+1. Run `npm update` in the folder where the repository was cloned
+1. Register your application with Azure AD using [these instructions](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-javascript-spa#register-your-application)
+1. Grant this application `user.read` and `user.read.all` permissions
+1. Update the `Msaldemocfg.ts` file to include your clientID and Tenant Name with your application registration information
+```javascript
+export const MSALDemoCfg = {
+  // This comes from your Azure AD Application registration settings authority
+  clientID:'[YOUR CLIENT ID HERE]',
+  
+  // This can by your *.onmicrosoft.com tenant name
+  authority: "https://login.microsoftonline.com/[YOUR TENANT NAME HERE]" 
+}
+```
+1. Run `ng serve` to begin your application and browse to http://localhost:4200/ 
 
 ### Known Issue
 1. After login the AAD List Link and Welcome {username} values do not show so the user must refresh the browser
