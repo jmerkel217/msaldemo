@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <a routerLink="/" class="navbar-brand">Adal Example</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="!showLogin" class="nav-item">
+        <a routerLink="/userlist" class="nav-link">AAD Users</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/" class="nav-link">Link</a>
+      </li>
+    </ul>
+    <div class="form-inline mt-2 mt-md-0">
+      <span *ngIf="!showLogin">Welcome <span>{{ userName }}</span></span>
+      <button (click)="logInLogOut()" class="btn btn-success my-2 my-sm-0" type="button">{{ btnText }}</button>
+    </div>
+  </div>
+</nav>
