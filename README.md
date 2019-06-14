@@ -1,6 +1,8 @@
 # MsalExample
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.  
+
+This project is based on the MSAL example projects which are available [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/tree/dev/lib/msal-angular/samples). The MSAL-Angular documentation is very helpful as well for anyone getting started and can be found [here](https://github.com/AzureAD/microsoft-authentication-library-for-js/blob/dev/lib/msal-angular/README.md).
 
 ## Get Started
 Use the following instructions to clone and experiment with this project
