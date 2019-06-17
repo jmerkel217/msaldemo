@@ -9,7 +9,7 @@ Use the following instructions to clone and experiment with this project
 
 1. Begin by cloning the git repository to your development machine 
     git clone https://github.com/dmcwee/msaldemo.git
-1. Run `npm update` in the folder where the repository was cloned
+1. Run `npm install` in the folder where the repository was cloned
 1. Register your application with Azure AD using [these instructions](https://docs.microsoft.com/en-us/azure/active-directory/develop/tutorial-v2-javascript-spa#register-your-application)
 1. Grant this application `user.read` and `user.read.all` permissions
 1. Update the `Msaldemocfg.ts` file to include your clientID and Tenant Name with your application registration information
