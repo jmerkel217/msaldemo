@@ -1,0 +1,1 @@
+xcopy dist/msal-example/* .
