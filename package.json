@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-    , "prebuild": "echo *"
-    , "postbuild": "cd dist/msal-example"
+    , "prebuild": "echo $PWD"
   },
   "private": true,
   "dependencies": {
