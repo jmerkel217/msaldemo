@@ -8,8 +8,6 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-    , "prebuild": "echo /home/site/wwwroot/*"
-    , "postbuild": "ng build --prod --delete-output-path --output-path /home/site/wwwroot"
   },
   "private": true,
   "dependencies": {
