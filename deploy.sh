@@ -1,6 +1,8 @@
 # @if "%SCM_TRACE_LEVEL%" NEQ "4" @echo off
 
-echo $PWD
+
+WORKING_DIR=$PWD
+echo Working Directory $WORKING_DIR
 # ----------------------
 # KUDU Deployment Script
 # Version: 1.0.17
@@ -24,19 +26,19 @@ echo $PWD
 #set ARTIFACTS=%~dp0%..\artifacts
 
 DEPLOYMENT_SOURCE=/home/site
-echo $DEPLOYMENT_SOURCE
+echo Deployment Source $DEPLOYMENT_SOURCE
 #if NOT DEFINED DEPLOYMENT_SOURCE (
 #  SET DEPLOYMENT_SOURCE=%~dp0%.
 #)
 
 DEPLOYMENT_TARGET=/home/site/wwwroot
-echo $DEPLOYMENT_TARGET
+echo Deployment Target $DEPLOYMENT_TARGET
 #if NOT DEFINED DEPLOYMENT_TARGET (
 #  SET DEPLOYMENT_TARGET=%ARTIFACTS%\wwwroot
 #)
 
-NEXT_MANIFEST_PATH=$DEPLOYMENT_SOURCE\manifest
-echo $NEXT_MANIFEST_PATH
+#NEXT_MANIFEST_PATH=$DEPLOYMENT_SOURCE/manifest
+#echo $NEXT_MANIFEST_PATH
 #IF NOT DEFINED NEXT_MANIFEST_PATH (
 #  SET NEXT_MANIFEST_PATH=%ARTIFACTS%\manifest
 
@@ -47,8 +49,8 @@ echo $NEXT_MANIFEST_PATH
 
 #IF NOT DEFINED KUDU_SYNC_CMD (
   # Install kudu sync
-#  echo Installing Kudu Sync
-#  call npm install kudusync -g --silent
+echo Installing Kudu Sync
+npm install kudusync -g --silent
 #  IF !ERRORLEVEL! NEQ 0 goto error
 
   # Locally just running "kuduSync" would also work
@@ -111,6 +113,22 @@ echo $NEXT_MANIFEST_PATH
 #  IF !ERRORLEVEL! NEQ 0 goto error
 #  popd
 #)
+
+#perform the npm install
+if test ! -f $DEPLOYMENT_TARGET/package.json
+then
+  cp *.json $DEPLOYMENT_TARGET/.
+  cd $DEPLOYMENT_TARGET
+  npm install --production
+  cd $WORKING_DIR
+else
+  cd $DEPLOYMENT_TARGET
+  npm install --production
+  cd $WORKING_DIR
+fi
+
+#perform the npm build
+  ng build --prod --output-path $DEPLOYMENT_TARGET
 
 #################################################################
 #goto end
