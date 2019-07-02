@@ -8,9 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
-    , "build:azure": "ng build --output-path /home/site/wwwroot"
-    , "prebuild": "echo running prebuild command"
-    , "postbuild": "echo running postbuild command"
+    , "prebuild": "echo *"
+    , "postbuild": "xcopy dist/msal-example /home/site/wwwroot"
   },
   "private": true,
   "dependencies": {
