@@ -128,7 +128,8 @@ else
 fi
 
 #perform the npm build
-  ng build --prod --output-path $DEPLOYMENT_TARGET
+echo running ng build with output path of $DEPLOYMENT_TARGET
+  ng build --output-path $DEPLOYMENT_TARGET --progress
 
 #################################################################
 #goto end
