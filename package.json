@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:azure": "ng build --output-path bin/www"
+    "build:azure": "ng build --output-path bin/www",
+    "postinstall": "npm install http-server"
   },
   "private": true,
   "dependencies": {
