@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server bin/www",
+    "start": "http-server dist/msal-example",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:azure": "ng build --output-path bin/www",
     "postinstall": "npm install http-server"
   },
   "private": true,
@@ -24,6 +23,7 @@
     "@azure/msal-angular": "^0.1.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
+    "http-server": "^0.11.1",
     "jquery": "^3.4.1",
     "msal": "^1.0.1",
     "rxjs": "~6.3.3",
