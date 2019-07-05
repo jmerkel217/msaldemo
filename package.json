@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server dist/msal-example",
+    "start": "http-server dist/msal-example -r --no-dotfiles",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
