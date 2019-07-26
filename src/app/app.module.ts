@@ -10,6 +10,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import {MsalModule, MsalInterceptor} from '@azure/msal-angular';
 import { UserlistComponent } from './userlist/userlist.component';
+import { MyriskComponent } from './myrisk/myrisk.component';
 
 import { MSALDemoCfg } from './Msaldemocfg';
 
@@ -18,7 +19,8 @@ import { MSALDemoCfg } from './Msaldemocfg';
     AppComponent,
     MessagesComponent,
     NavigationComponent,
-    UserlistComponent
+    UserlistComponent,
+    MyriskComponent
   ],
   imports: [
     BrowserModule,
