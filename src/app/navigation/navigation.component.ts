@@ -28,6 +28,12 @@ export class NavigationComponent implements OnInit {
     }
   }
 
+  updateDisplay() {
+    this.userName = this.msalService.getUser().name;
+    this.btnText = "Log Off";
+    this.showLogin = true;
+  }
+
   logInLogOut() {
     if(this.msalService.getUser()){
       this.msalService.logout();
@@ -39,9 +45,10 @@ export class NavigationComponent implements OnInit {
           console.log("Login success " + JSON.stringify(result));
           this.log(`Success! Hello ${this.msalService.getUser().name}.`); 
 
-          this.userName = this.msalService.getUser().name;
-          this.btnText = "Log Off";
-          this.showLogin = true;
+          //this.userName = this.msalService.getUser().name;
+          //this.btnText = "Log Off";
+          //this.showLogin = true;
+          this.updateDisplay();
         })
         .catch(error => { this.log(JSON.stringify(error)); })
     }
